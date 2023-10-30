@@ -15,10 +15,6 @@ import com.facebook.soloader.SoLoader;
  */
 @DoNotStrip
 public class MainComponentsRegistry {
-  static {
-    SoLoader.loadLibrary("fabricjni");
-  }
-
   @DoNotStrip private final HybridData mHybridData;
 
   @DoNotStrip

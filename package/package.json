@@ -64,12 +64,11 @@
     "jsxBracketSameLine": true
   },
   "codegenConfig": {
-    "libraries": [
-      {
-        "name": "RNCSlider",
-        "type": "components",
-        "jsSrcsDir": "src"
-      }
-    ]
+    "name": "rncslider",
+    "type": "components",
+    "jsSrcsDir": "src",
+    "android": {
+      "javaPackage": "com.reactnativecommunity.slider"
+    }
   }
 }

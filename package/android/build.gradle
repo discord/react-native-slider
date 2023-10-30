@@ -60,11 +60,3 @@ dependencies {
   //noinspection GradleDynamicVersion
   api 'com.facebook.react:react-native:+'
 }
-
-if (isNewArchitectureEnabled()) {
-    react {
-        jsRootDir = file("../src")
-        libraryName = "ReactSlider"
-        codegenJavaPackageName = "com.reactnativecommunity.slider"
-    }
-}
