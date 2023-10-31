@@ -110,7 +110,7 @@ public class ReactSlider extends AppCompatSeekBar {
   }
 
   /* package */ void setValue(double value) {
-      if (value != mValue && !mHasSetValue) {
+      if (!mHasSetValue) {
         mValue = value;
         mHasSetValue = true;
         updateValue();
