@@ -54,6 +54,7 @@ public class ReactSlider extends AppCompatSeekBar {
    * component).
    */
   private double mValue = 0;
+  private boolean mHasSetValue = false;
 
   private boolean isSliding = false;
 
@@ -95,33 +96,46 @@ public class ReactSlider extends AppCompatSeekBar {
   }
 
   /* package */ void setMaxValue(double max) {
-    mMaxValue = max;
-    updateAll();
+      if (max != mMaxValue) {
+        mMaxValue = max;
+        updateAll();
+      }
   }
 
   /* package */ void setMinValue(double min) {
-    mMinValue = min;
-    updateAll();
+      if (min != mMinValue) {
+        mMinValue = min;
+        updateAll();
+      }
   }
 
   /* package */ void setValue(double value) {
-    mValue = value;
-    updateValue();
+      if (!mHasSetValue) {
+        mValue = value;
+        mHasSetValue = true;
+        updateValue();
+      }
   }
 
   /* package */ void setStep(double step) {
-    mStep = step;
-    updateAll();
+      if (step != mStep) {
+        mStep = step;
+        updateAll();
+      }
   }
 
   /* package */ void setLowerLimit(double value) {
-    mRealLowerLimit = value;
-    updateLowerLimit();
+      if (value != mRealLowerLimit) {
+        mRealLowerLimit = value;
+        updateLowerLimit();
+      }
   }
 
   /* package */ void setUpperLimit(double value) {
-    mRealUpperLimit = value;
-    updateUpperLimit();
+      if (value != mRealUpperLimit) {
+        mRealUpperLimit = value;
+        updateUpperLimit();
+      }
   }
 
   int getLowerLimit() {
