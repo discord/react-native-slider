@@ -60,7 +60,6 @@ buck-out/
 # Bundle artifact
 *.jsbundle
 .tmp/
-src/dist
 
 */ios/Pods
 
@@ -101,7 +100,6 @@ bld/
 [Oo]bj/
 [Ll]og/
 [Ll]ogs/
-dist/
 
 # Visual Studio 2015/2017 cache/options directory
 .vs/
