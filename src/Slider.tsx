@@ -204,7 +204,9 @@ const SliderComponent = (
 
   const onValueChangeEvent = onValueChange
     ? (event: Event) => {
-        onValueChange(event.nativeEvent.value);
+        if (event.nativeEvent.fromUser === true) {
+          onValueChange(event.nativeEvent.value);
+        }
       }
     : null;
 
