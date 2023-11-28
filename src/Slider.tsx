@@ -22,10 +22,6 @@ const LIMIT_MAX_VALUE = Number.MAX_SAFE_INTEGER;
 type Event = NativeSyntheticEvent<
   Readonly<{
     value: number;
-    /**
-     * Android Only.
-     */
-    fromUser?: boolean;
   }>
 >;
 

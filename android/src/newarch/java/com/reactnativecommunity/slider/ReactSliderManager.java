@@ -60,8 +60,10 @@ public class ReactSliderManager extends SimpleViewManager<ReactSlider> implement
 
               ReactContext reactContext = (ReactContext) seekbar.getContext();
               int reactTag = seekbar.getId();
-              UIManagerHelper.getEventDispatcherForReactTag(reactContext, reactTag)
-                      .dispatchEvent(new ReactSliderEvent(reactTag, slider.toRealProgress(progress), fromUser));
+              if (fromUser) {
+                UIManagerHelper.getEventDispatcherForReactTag(reactContext, reactTag)
+                        .dispatchEvent(new ReactSliderEvent(reactTag, slider.toRealProgress(progress)));
+              }
             }
 
             @Override
@@ -91,8 +93,7 @@ public class ReactSliderManager extends SimpleViewManager<ReactSlider> implement
               eventDispatcher.dispatchEvent(
                       new ReactSliderEvent(
                               reactTag,
-                              ((ReactSlider)seekbar).toRealProgress(seekbar.getProgress()),
-                              !((ReactSlider)seekbar).isSliding()));
+                              ((ReactSlider)seekbar).toRealProgress(seekbar.getProgress())));
             }
           };
 

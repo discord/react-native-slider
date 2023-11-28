@@ -54,7 +54,6 @@ public class ReactSlider extends AppCompatSeekBar {
    * component).
    */
   private double mValue = 0;
-  private boolean mHasSetValue = false;
 
   private boolean isSliding = false;
 
@@ -110,9 +109,8 @@ public class ReactSlider extends AppCompatSeekBar {
   }
 
   /* package */ void setValue(double value) {
-      if (!mHasSetValue) {
+      if (value != mValue) {
         mValue = value;
-        mHasSetValue = true;
         updateValue();
       }
   }

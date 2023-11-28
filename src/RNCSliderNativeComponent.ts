@@ -11,7 +11,6 @@ import type {
 
 type Event = Readonly<{
   value: Float;
-  fromUser?: boolean;
 }>;
 
 export interface NativeProps extends ViewProps {
