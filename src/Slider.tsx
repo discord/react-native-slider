@@ -22,10 +22,6 @@ const LIMIT_MAX_VALUE = Number.MAX_SAFE_INTEGER;
 type Event = NativeSyntheticEvent<
   Readonly<{
     value: number;
-    /**
-     * Android Only.
-     */
-    fromUser?: boolean;
   }>
 >;
 
@@ -204,9 +200,7 @@ const SliderComponent = (
 
   const onValueChangeEvent = onValueChange
     ? (event: Event) => {
-        if (event.nativeEvent.fromUser === true) {
-          onValueChange(event.nativeEvent.value);
-        }
+        onValueChange(event.nativeEvent.value);
       }
     : null;
 
