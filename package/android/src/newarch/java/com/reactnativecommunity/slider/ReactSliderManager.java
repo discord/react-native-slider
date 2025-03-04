@@ -224,12 +224,17 @@ public class ReactSliderManager extends SimpleViewManager<ReactSlider> implement
     @Nullable
     @Override
     public Map<String, Object> getExportedCustomBubblingEventTypeConstants() {
-        return ReactSliderManagerImpl.getExportedCustomBubblingEventTypeConstants();
+        return MapBuilder.of();
+        // return ReactSliderManagerImpl.getExportedCustomBubblingEventTypeConstants();
     }
 
     @Nullable
     @Override
     public Map<String, Object> getExportedCustomDirectEventTypeConstants() {
-        return ReactSliderManagerImpl.getExportedCustomDirectEventTypeConstants();
+        return MapBuilder.of(
+            ReactSliderEvent.EVENT_NAME.replaceFirst("on", "top"), MapBuilder.of("registrationName", ReactSliderEvent.EVENT_NAME),
+            ReactSlidingStartEvent.EVENT_NAME.replaceFirst("on", "top"), MapBuilder.of("registrationName", ReactSlidingStartEvent.EVENT_NAME),
+            ReactSlidingCompleteEvent.EVENT_NAME.replaceFirst("on", "top"), MapBuilder.of("registrationName", ReactSlidingCompleteEvent.EVENT_NAME)
+        );
     }
 }

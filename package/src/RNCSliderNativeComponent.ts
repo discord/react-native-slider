@@ -28,10 +28,10 @@ export interface NativeProps extends ViewProps {
   minimumTrackImage?: ImageSource;
   minimumTrackTintColor?: ColorValue;
   minimumValue?: Double;
-  onChange?: BubblingEventHandler<Event>;
+  // onChange?: BubblingEventHandler<Event>;
   onRNCSliderSlidingStart?: DirectEventHandler<Event>;
   onRNCSliderSlidingComplete?: DirectEventHandler<Event>;
-  onRNCSliderValueChange?: BubblingEventHandler<Event>;
+  // onRNCSliderValueChange?: BubblingEventHandler<Event>;
   step?: Double;
   testID?: string;
   thumbImage?: ImageSource;

@@ -17,7 +17,7 @@ import com.facebook.react.uimanager.events.Event;
  */
 public class ReactSliderEvent extends Event<ReactSliderEvent> {
 
-  public static final String EVENT_NAME = "topChange";
+  public static final String EVENT_NAME = "onRNCSliderValueChange";
 
   private final double mValue;
   private final boolean mFromUser;

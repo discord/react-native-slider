@@ -329,7 +329,7 @@ const SliderComponent = (
           defaultStyle,
           {alignContent: 'center', alignItems: 'center'},
         ]}
-        onChange={onValueChangeEvent}
+        // onChange={onValueChangeEvent}
         onRNCSliderSlidingStart={onSlidingStartEvent}
         onRNCSliderSlidingComplete={onSlidingCompleteEvent}
         onRNCSliderValueChange={onValueChangeEvent}
