@@ -36,6 +36,7 @@ public class ReactSliderManagerImpl {
     }
 
     public static void setValue(ReactSlider view, double value) {
+        System.out.println("[FORK] ReactSliderManagerImpl, setValue: " + value);
         if (view.isSliding() == false) {
             System.out.println("[FORK] ReactSliderManagerImpl, IS NOT SLIDING, setValue: " + value);
             view.setValue(value);
@@ -46,10 +47,12 @@ public class ReactSliderManagerImpl {
     }
 
     public static void setMinimumValue(ReactSlider view, double value) {
+        System.out.println("[FORK] ReactSliderManagerImpl, setMinimumValue: " + value);
         view.setMinValue(value);
     }
 
     public static void setMaximumValue(ReactSlider view, double value) {
+        System.out.println("[FORK] ReactSliderManagerImpl, setMaximumValue: " + value);
         view.setMaxValue(value);
     }
 
