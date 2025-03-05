@@ -236,6 +236,7 @@ const SliderComponent = (
   const style = [props.style, defaultStyle];
 
   const onValueChangeEvent = (event: Event) => {
+    console.log('[FORK] Slider.tsx, onValueChangeEvent', event.nativeEvent.value);
     onValueChange && onValueChange(event.nativeEvent.value);
     setCurrentValue(event.nativeEvent.value);
   };

@@ -46,6 +46,7 @@ public class ReactSliderManager extends SimpleViewManager<ReactSlider> implement
           new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekbar, int progress, boolean fromUser) {
+              System.out.println("[FORK] SeekBar, onProgressChanged: " + progress);
               ReactSlider slider = (ReactSlider)seekbar;
 
               progress = slider.getValidProgressValue(progress);
@@ -59,6 +60,7 @@ public class ReactSliderManager extends SimpleViewManager<ReactSlider> implement
 
             @Override
             public void onStartTrackingTouch(SeekBar seekbar) {
+              System.out.println("[FORK] SeekBar, onStartTrackingTouch()");
               ReactContext reactContext = (ReactContext) seekbar.getContext();
               int reactTag = seekbar.getId();
               ((ReactSlider)seekbar).isSliding(true);
@@ -70,6 +72,7 @@ public class ReactSliderManager extends SimpleViewManager<ReactSlider> implement
 
             @Override
             public void onStopTrackingTouch(SeekBar seekbar) {
+              System.out.println("[FORK] SeekBar, onStopTrackingTouch()");
               ReactContext reactContext = (ReactContext) seekbar.getContext();
               ((ReactSlider)seekbar).isSliding(false);
               int reactTag = seekbar.getId();
@@ -103,6 +106,7 @@ public class ReactSliderManager extends SimpleViewManager<ReactSlider> implement
   @Override
   @ReactProp(name = "value", defaultFloat = 0f)
   public void setValue(ReactSlider view, float value) {
+    System.out.println("[FORK] ReactSliderManager.java setValue: " + value);
     ReactSliderManagerImpl.setValue(view, value);
   }
 

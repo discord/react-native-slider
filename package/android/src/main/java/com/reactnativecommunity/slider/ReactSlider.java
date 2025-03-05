@@ -223,6 +223,7 @@ public class ReactSlider extends AppCompatSeekBar {
 
   /** Update underlying native SeekBar's values. */
   private void updateAll() {
+    System.out.println("[FORK] ReactSlider.java updateAll()");
     if (mStep == 0) {
       mStepCalculated = (mMaxValue - mMinValue) / (double) DEFAULT_TOTAL_STEPS;
     }

@@ -37,6 +37,7 @@ public class ReactSliderManagerImpl {
 
     public static void setValue(ReactSlider view, double value) {
         if (view.isSliding() == false) {
+            System.out.println("[FORK] ReactSliderManagerImpl, IS NOT SLIDING, setValue: " + value);
             view.setValue(value);
             if (view.isAccessibilityFocused() && Build.VERSION.SDK_INT > Build.VERSION_CODES.Q) {
                 view.setupAccessibility((int)value);
