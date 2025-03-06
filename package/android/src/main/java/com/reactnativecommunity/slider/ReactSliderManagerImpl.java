@@ -36,36 +36,46 @@ public class ReactSliderManagerImpl {
     }
 
     public static void setValue(ReactSlider view, double value) {
-        System.out.println("[FORK] ReactSliderManagerImpl, setValue: " + value);
         if (view.isSliding() == false) {
             System.out.println("[FORK] ReactSliderManagerImpl, IS NOT SLIDING, setValue: " + value);
             view.setValue(value);
             if (view.isAccessibilityFocused() && Build.VERSION.SDK_INT > Build.VERSION_CODES.Q) {
                 view.setupAccessibility((int)value);
             }
+        } else {
+            System.out.println("[FORK] ReactSliderManagerImpl, IS SLIDING, SKIPPING setValue: " + value);
         }
     }
 
     public static void setMinimumValue(ReactSlider view, double value) {
         System.out.println("[FORK] ReactSliderManagerImpl, setMinimumValue: " + value);
-        view.setMinValue(value);
+        if (view.isSliding() == false) {
+            view.setMinValue(value);
+        }
     }
 
     public static void setMaximumValue(ReactSlider view, double value) {
         System.out.println("[FORK] ReactSliderManagerImpl, setMaximumValue: " + value);
-        view.setMaxValue(value);
+        if (view.isSliding() == false) {
+           view.setMaxValue(value);
+        }
     }
 
     public static void setLowerLimit(ReactSlider view, double value) {
+        System.out.println("[FORK] ReactSliderManagerImpl, setLowerLimit: " + value);
         view.setLowerLimit(value);
     }
 
     public static void setUpperLimit(ReactSlider view, double value) {
+        System.out.println("[FORK] ReactSliderManagerImpl, setUpperLimit: " + value);
         view.setUpperLimit(value);
     }
 
     public static void setStep(ReactSlider view, double value) {
-        view.setStep(value);
+        System.out.println("[FORK] ReactSliderManagerImpl, setStep: " + value);
+        if (view.isSliding() == false) {
+            view.setStep(value);
+        }
     }
 
     public static void setDisabled(ReactSlider view, boolean disabled) {
